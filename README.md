@@ -1,6 +1,17 @@
 # Data_analysis_for_historians_Wiktor_Werner_1
 Repository for a teaching course on **data analysis in historical research** using **Python** and **Jupyter Notebook**.   The course is designed for students in history and the humanities who want to learn how to work with quantitative data in a clear and practical way, without needing advanced mathematical or computer science background. 
 
+## Citation / Citación
+
+**English**  
+Werner, Wiktor. *Data Analysis for Historical Research (Python & Jupyter Course).* Zenodo.  
+DOI: https://doi.org/10.5281/zenodo.17566726
+
+**Español**  
+Werner, Wiktor. *Curso de análisis de datos para la investigación histórica (Python y Jupyter).* Zenodo.  
+DOI: https://doi.org/10.5281/zenodo.17566726
+
+
 ## License / Licencia
 
 The course materials (code, notebooks and documentation) are released under the  
