@@ -1,6 +1,14 @@
 # Data_analysis_for_historians_Wiktor_Werner_1
 Repository for a teaching course on **data analysis in historical research** using **Python** and **Jupyter Notebook**.   The course is designed for students in history and the humanities who want to learn how to work with quantitative data in a clear and practical way, without needing advanced mathematical or computer science background. 
 
+## License / Licencia
+
+The course materials (code, notebooks and documentation) are released under the  
+**Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
+
+Los materiales del curso (código, notebooks y documentación) se publican bajo la  
+licencia **Creative Commons Atribución 4.0 Internacional (CC BY 4.0)**.
+
 
 How to use this repository / Cómo usar este repositorio
 
