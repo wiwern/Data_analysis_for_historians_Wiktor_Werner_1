@@ -85,6 +85,41 @@ The notebook encourages students to interpret:
 - how long-term trends relate to known historical processes (wars, reforms, technological change),
 - how seasonal or cyclical patterns may reflect institutional or social rhythms.
 
+### Notebook 03b – Time series analysis with a causal moment (CausalImpact)
+
+**Analytical tasks**
+
+- Load a CSV file and select:
+  - a date column,
+  - a numeric value column representing the historical series of interest.
+- Ask the user to provide an approximate **critical / causal date** (e.g. the date of a reform, crisis, war, policy change).
+- Snap the user’s date to the **nearest observed time point** in the series (to handle annual, monthly or irregular data with gaps).
+- Split the series into:
+  - a **pre-intervention period** (before the critical moment),
+  - a **post-intervention period** (after the critical moment).
+- Use the `CausalImpact` package to:
+  - learn the typical level, variance and trend of the series in the pre-intervention period,
+  - construct a **counterfactual** trajectory for the post-intervention period (“what would have happened without the critical moment”),
+  - estimate the point-wise and cumulative effect of the intervention.
+- Produce plots:
+  - observed vs. predicted (counterfactual) series,
+  - point-wise causal effects,
+  - cumulative effect over the post-intervention period.
+- Print a numerical summary (average and relative effect, tail-area probability) and a **verbal template in English** to help students interpret the results.
+
+**Theoretical background**
+
+This notebook extends the basic time series analysis by introducing a formal treatment of a **“causal moment”** in a historical series.  
+Instead of only describing long-term trends and seasonality, we:
+
+- treat a specific date (or short time window) as a potential **turning point** in the process,
+- use Bayesian structural time series (via `CausalImpact`) to estimate how the series would have continued if that turning point had not occurred,
+- measure the **difference** between the counterfactual trajectory and the actual post-intervention path.
+
+In methodological terms, this is an operationalisation of Werner’s idea of a **causal moment** in historical time-series research: the moment is not assumed to be decisive by definition; it is **tested** against the data.  
+The student is invited to connect the detected break to concrete historical events, policies or processes, and to discuss alternative explanations (changes in measurement, data coverage, other contemporaneous shocks).
+
+
 ---
 
 ### Notebook 04 – Correspondence analysis for two categorical variables
@@ -198,6 +233,41 @@ Se invita a los estudiantes a interpretar:
 
 - cómo las tendencias de largo plazo se relacionan con procesos históricos conocidos (guerras, reformas, cambios tecnológicos),
 - cómo los patrones estacionales o cíclicos pueden reflejar ritmos institucionales o sociales.
+
+
+### Notebook 03b – Análisis de series temporales con un momento causal (CausalImpact)
+
+**Operaciones analíticas**
+
+- Cargar un archivo CSV y seleccionar:
+  - una columna de fechas,
+  - una columna numérica que representa la serie histórica de interés.
+- Pedir al usuario una **fecha crítica / causal aproximada** (por ejemplo, la fecha de una reforma, una crisis, una guerra o un cambio de política).
+- Ajustar la fecha introducida al **punto temporal observado más cercano** en la serie (para manejar datos anuales, mensuales o irregulares con huecos).
+- Dividir la serie en:
+  - un **periodo pre-intervención** (antes del momento crítico),
+  - un **periodo post-intervención** (después del momento crítico).
+- Utilizar el paquete `CausalImpact` para:
+  - aprender el nivel, la variabilidad y la tendencia típicos de la serie en el periodo pre-intervención,
+  - construir una trayectoria **contrafactual** para el periodo posterior (“qué habría pasado sin el momento crítico”),
+  - estimar el efecto puntual y acumulado de la intervención.
+- Producir gráficos:
+  - serie observada vs. serie predicha (contrafactual),
+  - efectos causales punto a punto,
+  - efecto acumulado en el periodo post-intervención.
+- Imprimir un resumen numérico (efecto medio y relativo, probabilidad en la cola posterior) y una **plantilla de interpretación en inglés** para ayudar a los estudiantes a leer los resultados.
+
+**Fundamento teórico**
+
+Este notebook amplía el análisis básico de series temporales introduciendo un tratamiento formal de un **“momento causal”** en una serie histórica.  
+En lugar de limitarse a describir la tendencia y la estacionalidad, se:
+
+- toma una fecha concreta (o una ventana corta) como posible **punto de inflexión** en el proceso,
+- utiliza un modelo bayesiano de series temporales estructurales (a través de `CausalImpact`) para estimar cómo habría continuado la serie si dicho punto no hubiera ocurrido,
+- mide la **diferencia** entre la trayectoria contrafactual y el comportamiento observado en el periodo posterior.
+
+En términos metodológicos, esto opera la idea de Werner de un **momento causal** en el análisis de series históricas: el momento no se considera decisivo por definición, sino que se **pone a prueba** empíricamente.  
+Se invita al estudiante a vincular la ruptura detectada con acontecimientos, políticas o procesos históricos concretos, y a discutir explicaciones alternativas (cambios en la medición, cobertura de los datos u otros choques simultáneos).
 
 ---
 
@@ -313,6 +383,41 @@ Studenci zachęcani są do interpretacji:
 - jak trendy długookresowe wiążą się z procesami historycznymi (wojny, reformy, zmiany technologiczne),
 - jak wzory sezonowe lub cykliczne odzwierciedlają rytmy instytucjonalne lub społeczne.
 
+
+### Notebook 03b – Analiza szeregu czasowego z „momentem kauzalnym” (CausalImpact)
+
+**Czynności analityczne**
+
+- Wczytanie pliku CSV i wybór:
+  - kolumny z datami,
+  - kolumny ze zmienną ilościową, która tworzy analizowany szereg historyczny.
+- Poproszenie użytkownika o **przybliżoną datę momentu krytycznego / kauzalnego** (np. reformy, kryzysu, wojny, zmiany polityki).
+- „Dopasowanie” tej daty do **najbliższego realnie obserwowanego punktu czasowego** w szeregu (umożliwia pracę z danymi rocznymi, miesięcznymi czy nieregularnymi).
+- Podział szeregu na:
+  - **okres przedinterwencyjny** (przed momentem kauzalnym),
+  - **okres pointerwencyjny** (po momencie kauzalnym).
+- Zastosowanie pakietu `CausalImpact` w celu:
+  - nauczenia się typowego poziomu, zmienności i trendu szeregu w okresie przedinterwencyjnym,
+  - zbudowania **kontrafaktycznego przebiegu** szeregu w okresie pointerwencyjnym („jak wyglądałby szereg, gdyby moment kauzalny nie nastąpił”),
+  - oszacowania efektów punktowych i efektu skumulowanego.
+- Wygenerowanie wykresów:
+  - szereg obserwowany vs. kontrfaktyczny,
+  - efekt w poszczególnych punktach,
+  - efekt skumulowany po interwencji.
+- Wypisanie podsumowania liczbowego (efekt średni, efekt względny, miara istotności) oraz **szablonu interpretacji po angielsku**, który pomaga studentowi przełożyć wyniki modelu na opis historyczny.
+
+**Umocowanie teoretyczne**
+
+Notebook rozwija podstawową analizę szeregu czasowego o formalne ujęcie **„momentu kauzalnego”**.  
+Zamiast tylko opisywać trend i sezonowość:
+
+- traktujemy wskazaną datę (lub krótki odcinek czasu) jako kandydat na **punkt zwrotny**,
+- przy użyciu bayesowskiego modelu strukturalnego szeregu czasowego (`CausalImpact`) konstruujemy **scenariusz kontrfaktyczny** – przebieg zjawiska, gdyby kontynuowało ono dotychczasową dynamikę,
+- mierzymy **różnicę** między tym scenariuszem a rzeczywistym szeregiem po momencie kauzalnym, co pozwala ocenić rozmiar i trwałość przełomu.
+
+W kategoriach metodologii historii jest to operacjonalizacja koncepcji **momentu kauzalnego** (Werner): moment nie jest z góry przyjmowany jako decydujący, lecz jest **testowany** na danych.  
+Student zachęcany jest do powiązania wykrytej zmiany z konkretnymi wydarzeniami, decyzjami i procesami historycznymi oraz do rozważenia alternatywnych wyjaśnień (np. zmiany sposobu pomiaru, luki w danych, inne jednoczesne szoki).
+
 ---
 
 ### Notebook 04 – Analiza korespondencji dla dwóch zmiennych jakościowych
@@ -340,4 +445,3 @@ Kluczowe idee:
 - Geometryczna reprezentacja (biplot) pozwala interpretować **podobieństwa, przeciwstawienia i skojarzenia** między kategoriami.
 
 Notebook akcentuje, że obserwowane konfiguracje geometryczne muszą być interpretowane łącznie z wiedzą o kontekście historycznym i z krytyczną analizą źródeł.
-
