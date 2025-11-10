@@ -1,89 +1,233 @@
-# Python and Jupyter Notebook – Installation Guide  
-# Guía de instalación de Python y Jupyter Notebook
 
-This document explains how to install **Python 3** and **Jupyter Notebook** on **Windows**, **macOS** and **Linux**.  
-Este documento explica cómo instalar **Python 3** y **Jupyter Notebook** en **Windows**, **macOS** y **Linux**.
+## 🇬🇧 English – How to use this course
 
----
+### 0. Install Python and Jupyter
 
-## Part I – English
+* Install **Python 3** (e.g. from [python.org](https://www.python.org) or Anaconda).
+* In a terminal / command prompt:
 
-### 1. Goal
+```bash
+pip install jupyter pandas numpy matplotlib statsmodels
+```
 
-By the end of this guide you will have:
-
-- A working installation of **Python 3**  
-- The **Jupyter Notebook** environment  
-- A simple way to start Jupyter and create notebooks for the course  
-
-You can choose between:
-
-- **Option A – Anaconda (recommended for beginners)**  
-- **Option B – “Pure” Python + `pip` + Jupyter**
-
-Both are acceptable for the course.
+(If you use Anaconda, większość tego już jest.)
 
 ---
 
-### 2. Option A – Install Anaconda (recommended)
+### 1. Download the course to your computer
 
-Anaconda is a distribution of Python that includes many scientific libraries and Jupyter Notebook out of the box.
+Option A – with git:
 
-#### 2.1. Windows (Anaconda)
+```bash
+git clone https://github.com/USER/REPO.git
+cd REPO
+```
 
-1. Go to the official website:  
-   <https://www.anaconda.com/download>
-2. Download the **Anaconda Distribution for Windows** (64-bit, Python 3).
-3. Run the installer (`.exe`) and follow the steps:
-   - Choose **“Just Me”** (recommended) unless you know you need “All Users”.
-   - Keep the default installation path unless you have a specific reason to change it.
-   - When asked about **“Add Anaconda to my PATH environment variable”**, you can leave it **unchecked** (recommended).
-4. Finish the installation.
+Option B – without git:
 
-**Start Jupyter Notebook (Windows, Anaconda):**
-
-1. Open the **Start menu**.
-2. Search for **“Anaconda Navigator”** and open it.
-3. In Anaconda Navigator, find **“Jupyter Notebook”** and click **Launch**.
-4. A browser window should open at `http://localhost:8888` with the Jupyter file browser.
+1. On GitHub: click **“Code” → “Download ZIP”**.
+2. Unzip the file.
+3. Open a terminal in that folder.
 
 ---
 
-#### 2.2. macOS (Anaconda)
+### 2. Start Jupyter and open the notebooks
 
-1. Go to:  
-   <https://www.anaconda.com/download>
-2. Download the **Anaconda Distribution for macOS** (choose Apple Silicon or Intel according to your Mac).
-3. Open the downloaded installer (`.pkg`) and follow the installation wizard.
-4. Accept the default options unless you have specific needs.
+In the course folder:
 
-**Start Jupyter Notebook (macOS, Anaconda):**
+```bash
+jupyter notebook
+```
 
-- **Option 1 – Anaconda Navigator**
-  1. Open **Launchpad**, search for **“Anaconda Navigator”**, and start it.
-  2. Click **Launch** under **Jupyter Notebook**.
+Then in the browser:
 
-- **Option 2 – Terminal**
-  1. Open **Terminal**.
-  2. (Optional) Activate the `base` environment:
-     ```bash
-     conda activate base
-     ```
-  3. Run:
-     ```bash
-     jupyter notebook
-     ```
+1. Go to the `notebooks/` directory.
+2. Open one of:
 
-A browser window should open automatically.
+   * `01_descriptive_statistics.ipynb`
+   * `02_eda_linear_regression.ipynb`
+   * `03_time_series_analysis.ipynb`
+   * `04_correspondence_analysis.ipynb`
+3. Run the cells from top to bottom.
 
 ---
 
-#### 2.3. Linux (Anaconda)
+### 3. Load your data into the code
 
-1. Go to:  
-   <https://www.anaconda.com/download>
-2. Download the **Linux installer** (`.sh` file).
-3. Open a terminal and navigate to your `Downloads` folder, for example:
-   ```bash
-   cd ~/Downloads
+1. Put your **CSV file** in the main folder or in `data/`, e.g.:
+
+   * `data/example_two_variables.csv`
+
+2. When the notebook asks for the file name, type something like:
+
+   ```text
+   data/example_two_variables.csv
+   ```
+
+   (Always include `.csv`.)
+
+3. When asked for **column names**, type them exactly as in the file
+   (e.g. `value1`, `value2`, `Date`, `Close`, `region`, `party`, etc.).
+
+4. The notebook will:
+
+   * load the data,
+   * show first rows,
+   * and then run the analysis (statistics, plots, etc.).
+
+---
+
+## 🇪🇸 Español – Cómo usar este curso
+
+### 0. Instalar Python y Jupyter
+
+* Instala **Python 3** (por ejemplo desde [python.org](https://www.python.org) o Anaconda).
+* En una terminal:
+
+```bash
+pip install jupyter pandas numpy matplotlib statsmodels
+```
+
+(Si usas Anaconda, la mayoría ya viene instalada.)
+
+---
+
+### 1. Descargar el curso al ordenador
+
+Opción A – con git:
+
+```bash
+git clone https://github.com/USER/REPO.git
+cd REPO
+```
+
+Opción B – sin git:
+
+1. En GitHub: haz clic en **“Code” → “Download ZIP”**.
+2. Descomprime el archivo ZIP.
+3. Abre una terminal en esa carpeta.
+
+---
+
+### 2. Abrir los notebooks en Jupyter
+
+En la carpeta del curso:
+
+```bash
+jupyter notebook
+```
+
+En el navegador:
+
+1. Entra en el directorio `notebooks/`.
+2. Abre uno de estos archivos:
+
+   * `01_descriptive_statistics.ipynb`
+   * `02_eda_linear_regression.ipynb`
+   * `03_time_series_analysis.ipynb`
+   * `04_correspondence_analysis.ipynb`
+3. Ejecuta las celdas desde arriba hacia abajo.
+
+---
+
+### 3. Cargar tus datos en el código
+
+1. Coloca tu archivo **CSV** en la carpeta principal o en `data/`, por ejemplo:
+
+   * `data/example_two_variables.csv`
+
+2. Cuando el notebook pida el nombre del archivo, escribe algo como:
+
+   ```text
+   data/example_two_variables.csv
+   ```
+
+   (Siempre con la extensión `.csv`.)
+
+3. Cuando pida los **nombres de las columnas**, escríbelos exactamente como aparecen en el archivo
+   (por ejemplo: `value1`, `value2`, `Date`, `Close`, `region`, `party`, etc.).
+
+4. El notebook:
+
+   * carga los datos,
+   * muestra las primeras filas,
+   * y luego ejecuta el análisis (estadística, gráficos, etc.).
+
+---
+
+## 🇵🇱 Polski – Jak korzystać z kursu
+
+### 0. Instalacja Pythona i Jupytera
+
+* Zainstaluj **Python 3** (np. z [python.org](https://www.python.org) albo Anacondę).
+* W terminalu / PowerShellu:
+
+```bash
+pip install jupyter pandas numpy matplotlib statsmodels
+```
+
+(Przy Anacondzie większość pakietów już jest.)
+
+---
+
+### 1. Ściągnięcie kursu na komputer
+
+Opcja A – z gitem:
+
+```bash
+git clone https://github.com/USER/REPO.git
+cd REPO
+```
+
+Opcja B – bez gita:
+
+1. Na GitHubie kliknij **„Code” → „Download ZIP”**.
+2. Rozpakuj ZIP.
+3. Otwórz terminal w tym katalogu.
+
+---
+
+### 2. Uruchomienie notebooków w Jupyterze
+
+W katalogu kursu:
+
+```bash
+jupyter notebook
+```
+
+W przeglądarce:
+
+1. Wejdź do folderu `notebooks/`.
+2. Otwórz wybrany notebook:
+
+   * `01_descriptive_statistics.ipynb`
+   * `02_eda_linear_regression.ipynb`
+   * `03_time_series_analysis.ipynb`
+   * `04_correspondence_analysis.ipynb`
+3. Uruchamiaj komórki po kolei, od góry do dołu.
+
+---
+
+### 3. Wczytanie danych do kodu
+
+1. Włóż swój plik **CSV** do folderu repozytorium, najlepiej do `data/`, np.:
+
+   * `data/example_two_variables.csv`
+
+2. Gdy notebook poprosi o nazwę pliku, wpisz np.:
+
+   ```text
+   data/example_two_variables.csv
+   ```
+
+   (Zawsze z `.csv` na końcu.)
+
+3. Gdy poprosi o **nazwy kolumn**, wpisz je dokładnie tak, jak są w pliku
+   (np. `value1`, `value2`, `Date`, `Close`, `region`, `party` itd.).
+
+4. Notebook:
+
+   * wczyta dane,
+   * pokaże kilka pierwszych wierszy,
+   * a potem wykona analizę (statystyki, wykresy itd.).
 
