@@ -148,6 +148,50 @@ Key ideas:
 
 The notebook emphasizes that the geometric patterns must be interpreted together with substantive historical knowledge and source criticism.
 
+### Notebook 05 – Directed network analysis (centrality, communities, backbone)
+
+**Analytical tasks**
+
+- Load a CSV or Excel file and select:
+  - a **cause** column (source of the edge),
+  - a **target** column (destination of the edge).
+- Clean the data by dropping rows with missing cause/target and aggregating identical pairs into weighted directed edges.
+- Build a **directed NetworkX graph** where each edge goes from cause → target and the weight reflects how often the pair appears in the data.
+- Produce a **raw visualization** of the full directed graph using a force-directed layout (spring layout).
+- Produce a **focused visualization** for the most central nodes:
+  - compute degree centrality,
+  - extract the subgraph induced by the top nodes,
+  - visualize it with node sizes proportional to centrality.
+- Compute three centrality measures:
+  - degree centrality,
+  - betweenness centrality,
+  - closeness centrality,
+  and display **bar plots for the top 20 nodes** for each measure.
+- Detect **communities (clusters)** on the undirected version of the graph using a modularity-based algorithm and visualize subgraphs for the largest communities.
+- Extract a simple **backbone** of the network:
+  - either edges with weight above the 75th percentile,
+  - or a subgraph induced by the most central nodes when all weights are equal.
+- Provide an English summary of:
+  - the size and density of the network,
+  - the main central nodes,
+  - the structure and sizes of communities,
+  - the backbone as a structural “spine” of the network.
+
+**Theoretical background**
+
+This notebook introduces **directed network analysis** for historical research. Nodes can represent actors (individuals, groups, institutions), texts, concepts or categories; directed edges encode relations such as influence, citation, reference, dependence or causal links (cause → target).
+
+Key ideas:
+
+- **Degree centrality** identifies highly connected nodes – potential hubs of activity, discourse or influence.
+- **Betweenness centrality** highlights nodes that act as bridges between different parts of the network (intermediaries, brokers, boundary figures).
+- **Closeness centrality** points to structurally central positions that are, on average, close to all others.
+- **Communities (clusters)** group nodes that are more densely connected to each other than to the rest of the graph, which can correspond to ideological camps, regional blocs, professional groups or thematic clusters.
+- The **backbone** is a simplified subgraph that keeps only the most important nodes and edges, making it easier to relate the network structure to a historical narrative.
+
+The notebook ends with an interpretation template in English that encourages students to connect structural properties of the network (centrality, clustering, backbone) to specific historical actors, debates, institutions or processes.
+
+
 ---
 
 ## 🇪🇸 Visión general del curso (Español)
@@ -297,6 +341,50 @@ Ideas clave:
 
 El notebook insiste en que los patrones geométricos deben interpretarse junto con el conocimiento sustantivo del contexto histórico y con una lectura crítica de las fuentes.
 
+
+### Notebook 05 – Análisis de redes dirigidas (centralidad, comunidades, esqueleto)
+
+**Operaciones analíticas**
+
+- Cargar un archivo CSV o Excel y seleccionar:
+  - una columna **cause** (origen de la arista),
+  - una columna **target** (destino de la arista).
+- Limpiar los datos eliminando filas con valores faltantes en cause/target y agregando pares idénticos en aristas dirigidas ponderadas.
+- Construir un **grafo dirigido en NetworkX**, donde cada arista va de cause → target y el peso refleja cuántas veces aparece el par en los datos.
+- Producir una **visualización “en bruto”** de todo el grafo dirigido utilizando un layout por fuerzas (spring layout).
+- Producir una **visualización enfocada** en los nodos más centrales:
+  - calcular la centralidad de grado,
+  - extraer el subgrafo inducido por los nodos más centrales,
+  - visualizarlo con tamaños de nodo proporcionales a la centralidad.
+- Calcular tres medidas de centralidad:
+  - centralidad de grado,
+  - centralidad de intermediación (betweenness),
+  - centralidad de cercanía (closeness),
+  y mostrar **gráficos de barras para los 20 nodos más importantes** en cada medida.
+- Detectar **comunidades (clusters)** en la versión no dirigida del grafo mediante un algoritmo basado en modularidad y visualizar subgrafos para las comunidades más grandes.
+- Extraer un **“esqueleto” (backbone)** sencillo de la red:
+  - ya sea aristas con peso por encima del percentil 75,
+  - o un subgrafo inducido por los nodos más centrales cuando todos los pesos son iguales.
+- Producir un resumen en inglés sobre:
+  - el tamaño y la densidad de la red,
+  - los nodos más centrales,
+  - la estructura y el tamaño de las comunidades,
+  - el esqueleto como “columna vertebral” estructural de la red.
+
+**Fundamento teórico**
+
+Este notebook introduce el **análisis de redes dirigidas** para la investigación histórica. Los nodos pueden representar actores (individuos, grupos, instituciones), textos, conceptos o categorías; las aristas dirigidas codifican relaciones como influencia, citación, referencia, dependencia o vínculos causales (cause → target).
+
+Ideas clave:
+
+- La **centralidad de grado** identifica nodos muy conectados – posibles hubs de actividad, discurso o influencia.
+- La **centralidad de intermediación (betweenness)** resalta nodos que actúan como puentes entre partes diferentes de la red (intermediarios, brokers, figuras liminales).
+- La **centralidad de cercanía (closeness)** señala posiciones estructuralmente centrales que, en promedio, están cerca de todos los demás nodos.
+- Las **comunidades (clusters)** agrupan nodos más densamente conectados entre sí que con el resto de la red, lo que puede corresponder a campos ideológicos, bloques regionales, grupos profesionales o clusters temáticos.
+- El **esqueleto (backbone)** es un subgrafo simplificado que conserva solo los nodos y aristas más importantes, facilitando la conexión entre la estructura de la red y una narración histórica.
+
+El notebook termina con una plantilla de interpretación en inglés que invita a los estudiantes a relacionar las propiedades estructurales de la red (centralidad, comunidades, esqueleto) con actores, debates, instituciones o procesos históricos concretos.
+
 ---
 
 ## 🇵🇱 Przegląd kursu (Polski)
@@ -445,3 +533,47 @@ Kluczowe idee:
 - Geometryczna reprezentacja (biplot) pozwala interpretować **podobieństwa, przeciwstawienia i skojarzenia** między kategoriami.
 
 Notebook akcentuje, że obserwowane konfiguracje geometryczne muszą być interpretowane łącznie z wiedzą o kontekście historycznym i z krytyczną analizą źródeł.
+
+### Notebook 05 – Analiza sieci skierowanej (centralność, klastry, „kręgosłup”)
+
+**Czynności analityczne**
+
+- Wczytanie pliku CSV lub Excel i wybór:
+  - kolumny **cause** (źródło krawędzi),
+  - kolumny **target** (cel krawędzi).
+- Oczyszczenie danych przez usunięcie wierszy z brakami w cause/target oraz agregację identycznych par w postaci skierowanych krawędzi z wagą.
+- Zbudowanie **skierowanego grafu NetworkX**, w którym każda krawędź prowadzi od cause → target, a waga odzwierciedla częstość współwystępowania pary w danych.
+- Wygenerowanie **„surowej” wizualizacji** całego grafu skierowanego z użyciem układu sprężynowego (spring layout).
+- Wygenerowanie **wizualizacji skupionej** na najważniejszych węzłach:
+  - obliczenie centralności stopnia,
+  - wyodrębnienie podgrafu indukowanego przez węzły o najwyższej centralności,
+  - wizualizacja z rozmiarami węzłów proporcjonalnymi do centralności.
+- Obliczenie trzech miar centralności:
+  - centralność stopnia,
+  - centralność pośrednictwa (betweenness),
+  - centralność bliskości (closeness),
+  oraz przedstawienie **wykresów słupkowych dla 20 węzłów o najwyższych wartościach** każdej z miar.
+- Wykrycie **klastrów (wspólnot)** w nieskierowanej wersji grafu z użyciem algorytmu opartego na modularności oraz wizualizacja podgrafów dla największych wspólnot.
+- Wyodrębnienie prostego **„kręgosłupa” (backbone)** sieci:
+  - albo poprzez wybór krawędzi o wadze powyżej 75. percentyla,
+  - albo poprzez podgraf indukowany przez węzły o najwyższej centralności, gdy wszystkie wagi są podobne.
+- Przygotowanie anglojęzycznego podsumowania:
+  - wielkości i gęstości sieci,
+  - głównych węzłów centralnych,
+  - struktury i rozmiarów klastrów,
+  - kręgosłupa jako uproszczonego rdzenia strukturalnego sieci.
+
+**Umocowanie teoretyczne**
+
+Notebook wprowadza **analizę sieci skierowanej** w badaniach historycznych. Węzły mogą reprezentować aktorów (jednostki, grupy, instytucje), teksty, pojęcia lub kategorie; skierowane krawędzie kodują relacje takie jak wpływ, cytowanie, odwołanie, zależność czy relacje kauzalne (cause → target).
+
+Kluczowe idee:
+
+- **Centralność stopnia** wskazuje węzły wyjątkowo silnie połączone – potencjalne „huby” aktywności, dyskursu lub wpływu.
+- **Centralność pośrednictwa (betweenness)** wyłapuje węzły pełniące funkcje mostów między częściami sieci (pośrednicy, brokerzy, figury graniczne).
+- **Centralność bliskości (closeness)** identyfikuje pozycje strukturalnie centralne, średnio blisko wszystkich innych węzłów.
+- **Klastry (wspólnoty)** grupują węzły gęściej połączone ze sobą niż z resztą sieci, co może odpowiadać obozom ideologicznym, blokom regionalnym, grupom zawodowym czy klastrom tematycznym.
+- **Kręgosłup (backbone)** to uproszczony podgraf zawierający tylko najważniejsze węzły i krawędzie, który łatwiej powiązać z narracją historyczną niż pełną, gęstą sieć.
+
+Notebook kończy się szablonem interpretacji po angielsku, zachęcającym do łączenia własności strukturalnych sieci (centralność, klastry, kręgosłup) z konkretnymi aktorami, sporami, instytucjami i procesami historycznymi.
+
